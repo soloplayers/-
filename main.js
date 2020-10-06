@@ -2,7 +2,7 @@ let demo = document.querySelector("#demo");
 let style = document.querySelector("#style");
 let div1 = document.querySelector("#div1");
 let n = 0;
-let str = `/*我是一个前端新人，
+let str = `/*这是一个会动的简历，
 接下来我要加样式了*/
 body{
   color:green;
