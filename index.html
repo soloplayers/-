@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>一个会动的简历</title>
+  </head>
+  <body>
+    <style id="style"></style>
+    <div id="demo"></div>
+    <div id="wrapper">
+      <div id="div1"></div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #div1 {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+      #demo {
+        word-break: break-all;
+        overflow: auto;
+        /* 注意要加上溢出处理，不然感觉设置50vh的高度更没用一样 */
+      }
+
+      /* 媒体查询：认为最大宽度小于等于500px的就是手机 */
+      @media (max-width: 500px) {
+        /* 上下结构：
+          demo分配50%的height
+          div1分偶50%的height
+           */
+        #demo {
+          height: 50vh;
+        }
+        #wrapper {
+          height: 50vh;
+        }
+        #div1 {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        #div1::before {
+          width: 100px;
+          height: 100px;
+        }
+        #div1::after {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    </style>
+    <script src="./main.js"></script>
+  </body>
+</html>
